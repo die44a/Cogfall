@@ -65,5 +65,6 @@ public class PlayerMovement : MonoBehaviour
         _targetVelocity = Vector3.Lerp(_targetVelocity, Vector3.zero, damping * Time.fixedDeltaTime);
         
         _rb.MovePosition(_rb.position + _targetVelocity * Time.fixedDeltaTime);
+        transform.forward = _targetVelocity;
     }
 }
