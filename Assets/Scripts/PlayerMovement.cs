@@ -5,14 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float acceleration = 1f;
-    [SerializeField] private float sprintAcceleration = 2f;
-    [SerializeField] private float damping = 2f;
+    [SerializeField] private float acceleration = 10f;
+    [SerializeField] private float sprintAcceleration = 18f;
+    [SerializeField] private float damping = 5f;
     private Vector3 _targetVelocity;
     
     [SerializeField] private InputActionAsset playerActionAsset;
 
     private Rigidbody _rb;
+    private Camera _camera;
 
     private InputAction _moveAction;
     private InputAction _sprintAction;
@@ -22,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-
+        _camera =  Camera.main;
+        
         var playerMap = playerActionAsset.FindActionMap("Player");
 
         _moveAction = playerMap.FindAction("Move");
@@ -56,11 +58,12 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         var targetAcceleration = _isSprinting ? sprintAcceleration : acceleration;
-        var targetDirection = Quaternion.Euler(0, 45f, 0) * new Vector3(_moveInput.x, 0, _moveInput.y).normalized;
+        var camRotation = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0);
+        var targetDirection = camRotation * new Vector3(_moveInput.x, 0, _moveInput.y).normalized;
         
         _targetVelocity += targetAcceleration * Time.fixedDeltaTime * targetDirection;
         _targetVelocity = Vector3.Lerp(_targetVelocity, Vector3.zero, damping * Time.fixedDeltaTime);
         
-        _rb.MovePosition(_rb.position + _targetVelocity);
+        _rb.MovePosition(_rb.position + _targetVelocity * Time.fixedDeltaTime);
     }
 }
