@@ -8,16 +8,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float sprintAcceleration = 18f;
     [SerializeField] private float damping = 5f;
-    private Vector3 _targetVelocity;
     
     [SerializeField] private InputActionAsset playerActionAsset;
+    private InputAction _moveAction;
+    private InputAction _sprintAction;
 
     private Rigidbody _rb;
     private Camera _camera;
 
-    private InputAction _moveAction;
-    private InputAction _sprintAction;
     private Vector2 _moveInput;
+    private Vector3 _targetVelocity;
     private bool _isSprinting;
 
     private void Awake()
