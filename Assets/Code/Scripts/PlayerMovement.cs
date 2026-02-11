@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float sprintAcceleration = 18f;
+    [SerializeField] private float rotateSpeed = 180f;
     [SerializeField] private float damping = 5f;
     
     [SerializeField] private InputActionAsset playerActionAsset;
@@ -65,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         _targetVelocity = Vector3.Lerp(_targetVelocity, Vector3.zero, damping * Time.fixedDeltaTime);
         
         _rb.MovePosition(_rb.position + _targetVelocity * Time.fixedDeltaTime);
-        transform.forward = _targetVelocity;
+        var targetRotation = Quaternion.LookRotation(_targetVelocity);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
     }
 }
