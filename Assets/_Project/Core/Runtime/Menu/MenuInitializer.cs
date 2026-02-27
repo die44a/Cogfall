@@ -1,6 +1,12 @@
-using UnityEngine;
+using Zenject;
 
-public class MenuInitializer
+namespace _Project.Core.Runtime.Menu
 {
-    
+    public class MenuInitializer : IInitializable
+    {
+        public void Initialize()
+        {
+        
+        }
+    }
 }
