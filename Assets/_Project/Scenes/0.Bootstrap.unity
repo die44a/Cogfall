@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fdb182371bc63142a5185ab8e4ba3d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BootstrapInstaller
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Core.Runtime.Bootstrap.BootstrapInstaller
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

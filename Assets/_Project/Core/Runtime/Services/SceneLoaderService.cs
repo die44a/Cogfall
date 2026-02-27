@@ -14,6 +14,11 @@ namespace _Project.Core.Runtime.Services
 
         public void Initialize() {}
         
+        public void LoadMenuScene()
+        {
+            _sceneLoader.LoadScene("1.Menu");
+        }
+
         public void LoadCoreScene()
         {
             _sceneLoader.LoadScene("2.Core");

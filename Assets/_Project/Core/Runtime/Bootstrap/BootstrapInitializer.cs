@@ -18,7 +18,7 @@ namespace _Project.Core.Runtime.Bootstrap
             _sceneLoaderService.Initialize();
             
             // Do something else
-            _sceneLoaderService.LoadCoreScene();
+            _sceneLoaderService.LoadMenuScene();
         }
     }
 }
