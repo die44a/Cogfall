@@ -1,10 +1,12 @@
+using System;
 using _Project.Core.Runtime.Services;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace _Project.Core.Runtime.Menu
 {
-    public class MenuView : MonoBehaviour
+    public class MenuView : MonoBehaviour, IDisposable
     {
         private MenuViewModel _menuViewModel;
         
@@ -13,15 +15,20 @@ namespace _Project.Core.Runtime.Menu
         {
             _menuViewModel = menuViewModel;
         }
+        
+        [SerializeField] private Button startButton;
+        [SerializeField] private Button quitButton;
 
-        public void OnStart()
+        public void Initialize()
         {
-            Debug.Log("Game Started");
+            startButton.onClick.AddListener(_menuViewModel.HandleStartButtonClick);
+            quitButton.onClick.AddListener(_menuViewModel.HandleExitButtonClick);
         }
 
-        public void OnQuit()
+        public void Dispose()
         {
-            Debug.Log("Game Quit");
+            startButton.onClick.RemoveListener(_menuViewModel.HandleStartButtonClick);
+            quitButton.onClick.RemoveListener(_menuViewModel.HandleExitButtonClick);
         }
     }
 }

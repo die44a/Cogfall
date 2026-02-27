@@ -17,7 +17,7 @@ namespace _Project.Core.Runtime.Menu
 
             Container.BindInterfacesAndSelfTo<MenuInitializer>().AsSingle().NonLazy();
             
-            Debug.Log("Installing Menu");
+            Debug.Log("Menu installed");
         }
     }
 }

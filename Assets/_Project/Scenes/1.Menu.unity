@@ -559,16 +559,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173344201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 548.9656}
+  m_LocalScale: {x: 0.1069547, y: 0.1069547, z: 0.1069547}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1920172621}
+  m_Father: {fileID: 1308995954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.21975708, y: -12.608475}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173344203
@@ -691,19 +691,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188094900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1308995953}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1188094900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +760,7 @@ Transform:
   m_LocalScale: {x: 9.349753, y: 9.349753, z: 9.349753}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1173344202}
   - {fileID: 1188094898}
   - {fileID: 2027801313}
   m_Father: {fileID: 1920172621}
@@ -788,6 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcedb804fc71b0a4fb21ecd9e2038976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Core.Runtime.Menu.MenuView
+  startButton: {fileID: 1188094899}
+  quitButton: {fileID: 2027801314}
 --- !u!1 &1786611272
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +952,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1173344202}
   - {fileID: 1308995954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 163.988, z: 0}

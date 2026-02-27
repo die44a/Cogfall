@@ -12,5 +12,7 @@ namespace _Project.Core.Runtime.Menu
         {
             _menuViewModel = menuViewModel;
         }
+
+        private string PlayerName => "Unknown";
     }
 }
