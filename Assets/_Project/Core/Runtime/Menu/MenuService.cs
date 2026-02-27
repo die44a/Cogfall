@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public class MenuService
+namespace _Project.Core.Runtime.Menu
 {
-    
+    public class MenuService
+    {
+        
+    }
 }

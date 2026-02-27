@@ -13,8 +13,11 @@ namespace _Project.Core.Runtime.Menu
             Container.BindInstance(menuView).AsSingle();
             Container.Bind<MenuModel>().AsSingle();
             Container.Bind<MenuViewModel>().AsSingle();
+            Container.Bind<MenuService>().AsSingle();
 
-            Container.Bind<MenuInitializer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MenuInitializer>().AsSingle().NonLazy();
+            
+            Debug.Log("Installing Menu");
         }
     }
 }
