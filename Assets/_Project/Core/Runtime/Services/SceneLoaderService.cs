@@ -12,9 +12,11 @@ namespace _Project.Core.Runtime.Services
             _sceneLoader = sceneLoader;
         }
 
+        public void Initialize() {}
+        
         public void LoadCoreScene()
         {
-            _sceneLoader.LoadScene("3.Core");
+            _sceneLoader.LoadScene("2.Core");
         }
     }
 }

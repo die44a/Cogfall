@@ -5,7 +5,7 @@ namespace _Project.Core.Runtime.Bootstrap
 {
     public class BootstrapInitializer : IInitializable
     {
-        private SceneLoaderService  _sceneLoaderService;
+        private readonly SceneLoaderService _sceneLoaderService;
 
         public BootstrapInitializer(SceneLoaderService sceneLoaderService)
         {
@@ -14,6 +14,10 @@ namespace _Project.Core.Runtime.Bootstrap
 
         public void Initialize()
         {
+            // Init services
+            _sceneLoaderService.Initialize();
+            
+            // Do something else
             _sceneLoaderService.LoadCoreScene();
         }
     }
